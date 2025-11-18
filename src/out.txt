@@ -1,0 +1,10 @@
+New folder
+README.md
+__pycache__
+command_exec.py
+core_shell.py
+gui.py
+main.py
+out.txt
+piping_redirection.py
+usability_features.py

@@ -1,5 +1,5 @@
 import os
-import glob
+import glob  #helps in auto-completion
 from ui import print_error, print_success
 
 # Check if readline is available, if not, create dummy functions
@@ -35,6 +35,7 @@ def save_history(command):
         with open(HISTORY_FILE, 'a') as f:
             f.write(command + '\n')
 
+
 def load_aliases():
     """Load aliases from the alias file into a dictionary."""
     aliases = {}
@@ -50,6 +51,7 @@ def load_aliases():
             print_error(f"Failed to load aliases: {e}")
     return aliases
 
+
 def save_aliases(aliases):
     """Save the entire aliases dictionary to the file, overwriting it."""
     try:
@@ -60,6 +62,7 @@ def save_aliases(aliases):
     except Exception as e:
         print_error(f"Failed to save aliases: {e}")
         return False
+
 
 def expand_alias(command_line, aliases):
     """Expand the first part of a command if it's an alias."""
@@ -74,6 +77,7 @@ def expand_alias(command_line, aliases):
         else:
             return expanded_cmd
     return command_line
+
 
 # --- Autocompletion Logic (for readline) ---
 COMMANDS = [
